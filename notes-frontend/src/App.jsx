@@ -32,7 +32,11 @@ const App = () => {
       })
       .catch((error) => {
         setErrorMessage(
-          `Note '${note.content}' was already removed from server`
+          `Error Message: ${
+            error.message
+              ? error.message
+              : "Note was already removed from server"
+          }`
         );
         setTimeout(() => {
           setErrorMessage(null);
