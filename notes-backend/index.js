@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 // Create an Express application instance
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 
 // Initialize an array of note objects with some sample data
 let notes = [
@@ -35,8 +35,10 @@ const requestLogger = (request, response, next) => {
 
 // Serve static files from the "dist" directory
 app.use(express.static("dist"));
-// Enable CORS for all routes
-app.use(cors());
+
+/* // Enable CORS for all routes
+app.use(cors()); */
+
 // Enable JSON parsing for request bodies
 app.use(express.json());
 // Apply the request logging middleware to all routes
